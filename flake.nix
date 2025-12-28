@@ -10,7 +10,6 @@
     nixosConfigurations.mitsuki = nixpkgs.lib.nixosSystem {
       modules = [
         nixos-hardware.nixosModules.framework-amd-ai-300-series
-        ./hardware-configuration.nix
         ./configuration.nix
       ];
     };
