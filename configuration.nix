@@ -176,6 +176,7 @@
     displaylink
     usbutils
     cope
+    onedrive
     foot # terminal
     waybar # status bar
     mako # notifications
