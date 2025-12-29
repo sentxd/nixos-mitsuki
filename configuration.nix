@@ -177,6 +177,7 @@
     usbutils
     cope
     onedrive
+    onedrivegui
     foot # terminal
     waybar # status bar
     mako # notifications
