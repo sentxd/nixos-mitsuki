@@ -19,9 +19,6 @@
         wget
         curl
         vscode
-	foot # terminal
-	waybar 
-	mako # notifications
     ];
 
     # Let Home Manager manage itself
@@ -32,12 +29,8 @@
         enable = true;
         settings.user.name  = "sentxd";
         settings.user.email = "sentxd@gmail.com";
-	extraConfig = {
+	settings = {
           credential.helper = "store";
 	};
     };
-
-    # Enable Niri
-    programs.niri.enable = true;
-
 }

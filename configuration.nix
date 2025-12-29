@@ -147,6 +147,9 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  # Enable niri
+  programs.niri.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -173,6 +176,9 @@
     displaylink
     usbutils
     cope
+    foot # terminal
+    waybar # status bar
+    mako # notifications
   ];
 
   # Virtualisation
