@@ -7,13 +7,14 @@
     programs.bash = {
         enable = true;
         shellAliases = {
-            btw = "echo i use vscode btw";
+            btw = "echo i use git-credential-manager btw";
 	    nxr = "sudo nixos-rebuild --impure switch --flake /home/sentinel/nixos-mitsuki#mitsuki";
         };
     };
 
     home.packages = with pkgs; [
         git
+	git-credential-manager
         neovim
         wget
         curl
@@ -28,5 +29,8 @@
         enable = true;
         settings.user.name  = "sentxd";
         settings.user.email = "sentxd@gmail.com";
+	extraConfig = {
+          credential.helper = "store";
+	};
     };
 }
