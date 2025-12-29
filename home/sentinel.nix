@@ -1,4 +1,4 @@
-{ config, pkgs, ... };
+{ config, pkgs, ... }:
 
 {
     home.username = "sentinel";
@@ -7,7 +7,7 @@
     programs.bash = {
         enable = true;
         shellAliases = {
-            btw = "echo i use home-manager btw";
+            btw = "echo i use git on home-manager btw";
         };
     };
 
@@ -16,8 +16,16 @@
         neovim
         wget
         curl
+        vscode
     ];
 
     # Let Home Manager manage itself
     programs.home-manager.enable = true;
+
+    # Manage Git
+    programs.git = {
+        enable = true;
+        settings.user.name  = "sentxd";
+        settings.user.email = "sentxd@gmail.com";
+    };
 }
