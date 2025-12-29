@@ -173,7 +173,6 @@
     displaylink
     usbutils
     cope
-    home-manager
   ];
 
   # Virtualisation
