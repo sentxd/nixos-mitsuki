@@ -7,7 +7,8 @@
     programs.bash = {
         enable = true;
         shellAliases = {
-            btw = "echo i use git on home-manager btw";
+            btw = "echo i use vscode btw";
+	    nxr = "sudo nixos-rebuild --impure switch --flake /home/sentinel/nixos-mitsuki#mitsuki";
         };
     };
 
