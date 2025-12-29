@@ -11,6 +11,7 @@
 	    nxr = "sudo nixos-rebuild --impure switch --flake /home/sentinel/nixos-mitsuki#mitsuki";
         };
     };
+    programs.onedrive.enable = true;
 
     home.packages = with pkgs; [
         git
@@ -19,6 +20,7 @@
         wget
         curl
         vscode
+	onedrive
     ];
 
     # Let Home Manager manage itself
