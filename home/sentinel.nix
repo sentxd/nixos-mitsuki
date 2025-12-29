@@ -7,7 +7,7 @@
     programs.bash = {
         enable = true;
         shellAliases = {
-            btw = "echo i use git-credential-manager btw";
+            btw = "echo i use niri btw";
 	    nxr = "sudo nixos-rebuild --impure switch --flake /home/sentinel/nixos-mitsuki#mitsuki";
         };
     };
@@ -19,6 +19,9 @@
         wget
         curl
         vscode
+	foot # terminal
+	waybar 
+	mako # notifications
     ];
 
     # Let Home Manager manage itself
@@ -33,4 +36,8 @@
           credential.helper = "store";
 	};
     };
+
+    # Enable Niri
+    programs.niri.enable = true;
+
 }
