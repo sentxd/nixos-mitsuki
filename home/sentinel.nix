@@ -7,20 +7,20 @@
     programs.bash = {
         enable = true;
         shellAliases = {
-            btw = "echo i use niri btw";
-	    nxr = "sudo nixos-rebuild --impure switch --flake /home/sentinel/nixos-mitsuki#mitsuki";
+            btw = "echo i use plasma btw";
+            nxr = "sudo nixos-rebuild --impure switch --flake /home/sentinel/nixos-mitsuki#mitsuki";
         };
     };
     programs.onedrive.enable = true;
 
     home.packages = with pkgs; [
         git
-	git-credential-manager
+        git-credential-manager
         neovim
         wget
         curl
         vscode
-	onedrive
+        onedrive
     ];
 
     # Let Home Manager manage itself
