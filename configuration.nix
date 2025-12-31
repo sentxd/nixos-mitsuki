@@ -181,7 +181,7 @@
     # foot # terminal for niri
     # waybar # status bar for niri
     # mako # notifications for niri
-    balena-etcher
+    ventoy-full-qt
   ];
 
   # Virtualisation
