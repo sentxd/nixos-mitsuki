@@ -148,7 +148,7 @@
   programs.firefox.enable = true;
 
   # Enable niri
-  programs.niri.enable = true;
+  programs.niri.enable = false;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -178,9 +178,10 @@
     cope
     onedrive
     onedrivegui
-    foot # terminal
-    waybar # status bar
-    mako # notifications
+    # foot # terminal for niri
+    # waybar # status bar for niri
+    # mako # notifications for niri
+    balena-etcher
   ];
 
   # Virtualisation

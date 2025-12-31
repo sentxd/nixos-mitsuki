@@ -4,6 +4,9 @@
     home.username = "sentinel";
     home.homeDirectory = "/home/sentinel";
     home.stateVersion = "25.11";
+    home.language.base = "en_AU.UTF-8";
+    home.language.time = "en_AU.UTF-8";
+
     programs.bash = {
         enable = true;
         shellAliases = {
