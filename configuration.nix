@@ -129,6 +129,8 @@
     settings.Login.HandleLidSwitch = "ignore";
     settings.Login.HandleLidSwitchExternalPower = "ignore";
     settings.Login.HandleLidSwitchDocked = "ignore";
+    settings.Login.HandleHibernateKey = "ignore";
+    settings.Login.HibernateDelaySec = 0;
   };
 
 
