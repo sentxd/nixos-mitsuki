@@ -131,6 +131,7 @@
     settings.Login.HandleLidSwitchDocked = "ignore";
     settings.Login.HandleHibernateKey = "ignore";
     settings.Login.HibernateDelaySec = 0;
+    settings.Login.AllowHibernation = false;
   };
 
 

@@ -12,6 +12,7 @@
         shellAliases = {
             btw = "echo i use plasma btw";
             nxr = "sudo nixos-rebuild --impure switch --flake /home/sentinel/nixos-mitsuki#mitsuki";
+            drb = "sudo nixos-rebuild --impure dry-build --flake /home/sentinel/nixos-mitsuki#mitsuki";
         };
     };
     programs.onedrive.enable = true;
