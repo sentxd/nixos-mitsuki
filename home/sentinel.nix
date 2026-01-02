@@ -5,7 +5,7 @@
     home.homeDirectory = "/home/sentinel";
     home.stateVersion = "25.11";
     home.language.base = "en_AU.UTF-8";
-    home.language.time = "en_AU.UTF-8";
+    home.language.time = "en_GB.UTF-8";
 
     home.file.".config/kscreenlockerrc".text = ''
         [Greeter]
