@@ -41,9 +41,9 @@
 
     # KDE Symlinks
     home.file = {
-        ".config/kdeglobals".source = ./dotfiles/kde/kdeglobals;
-        ".config/kcminputrc".source = ./dotfiles/kde/kcminputrc;
-        ".config/powerdevilrc".source = ./dotfiles/kde/powerdevilrc;
-        ".config/powermanagementprofilesrc".source = ./dotfiles/kde/powermanagementprofilesrc;
+        ".config/kdeglobals".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/kdeglobals;
+        ".config/kcminputrc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/kcminputrc;
+        ".config/powerdevilrc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/powerdevilrc;
+        ".config/powermanagementprofilesrc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/powermanagementprofilesrc;
     };
 }
