@@ -25,6 +25,7 @@
         curl
         vscode
         onedrive
+        mpv
     ];
 
     # Let Home Manager manage itself
