@@ -7,6 +7,11 @@
     home.language.base = "en_AU.UTF-8";
     home.language.time = "en_AU.UTF-8";
 
+    home.file.".config/kscreenlockerrc".text = ''
+        [Greeter]
+        Use24HourClock=true
+    '';
+
     programs.bash = {
         enable = true;
         shellAliases = {
