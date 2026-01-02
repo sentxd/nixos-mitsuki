@@ -36,6 +36,14 @@
         settings.user.email = "sentxd@gmail.com";
 	settings = {
           credential.helper = "store";
-	};
+	    };
+    };
+
+    # KDE Symlinks
+    home.file = {
+        ".config/kdeglobals".source = ./dotfiles/kde/kdeglobals;
+        ".config/kcminputrc".source = ./dotfiles/kde/kcminputrc;
+        ".config/powerdevilrc".source = ./dotfiles/kde/powerdevilrc;
+        ".config/powermanagementprofilesrc".source = ./dotfiles/kde/powermanagementprofilesrc;
     };
 }
