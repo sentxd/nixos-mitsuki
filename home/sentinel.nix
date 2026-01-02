@@ -7,11 +7,6 @@
     home.language.base = "en_AU.UTF-8";
     home.language.time = "en_GB.UTF-8";
 
-    home.file.".config/kscreenlockerrc".text = ''
-        [Greeter]
-        Use24HourClock=true
-    '';
-
     programs.bash = {
         enable = true;
         shellAliases = {
@@ -51,5 +46,11 @@
         ".config/kcminputrc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/kcminputrc;
         ".config/powerdevilrc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/powerdevilrc;
         ".config/powermanagementprofilesrc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/powermanagementprofilesrc;
+        ".config/plasma-localerc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/plasma-localerc;
     };
+    home.file.".config/kscreenlockerrc".text = ''
+        [Greeter]
+        Use24HourClock=true
+    '';
+
 }
