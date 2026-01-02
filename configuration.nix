@@ -134,6 +134,11 @@
     settings.Login.AllowHibernation = false;
   };
 
+  systemd.sleep.extraConfig = ''
+    AllowHibernation=no
+    AllowHybridSleep=no
+    AllowSuspendThenHibernate=no
+  '';
 
   # USER
   # Define a user account. Don't forget to set a password with ‘passwd’.
