@@ -26,6 +26,7 @@
         vscode
         onedrive
         mpv
+        signal-desktop
     ];
 
     # Let Home Manager manage itself
