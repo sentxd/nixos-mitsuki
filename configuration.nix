@@ -191,6 +191,8 @@
     usbutils
     onedrive
     onedrivegui
+    noto-fonts-cjk-sans
+    # niri-related packages
     # foot # terminal for niri
     # waybar # status bar for niri
     # mako # notifications for niri
