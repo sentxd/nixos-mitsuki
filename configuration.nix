@@ -189,7 +189,6 @@
     neofetch
     displaylink
     usbutils
-    cope
     onedrive
     onedrivegui
     # foot # terminal for niri
