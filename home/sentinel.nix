@@ -31,6 +31,7 @@
         kuro
         vlc
         evolution
+        evolution-ews
     ];
 
     # Let Home Manager manage itself
