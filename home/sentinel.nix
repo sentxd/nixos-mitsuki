@@ -27,7 +27,6 @@
         wget
         curl
         vscode
-        onedrive
         mpv
         signal-desktop
         kuro

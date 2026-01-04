@@ -189,9 +189,8 @@
     neofetch
     displaylink
     usbutils
-    onedrive
-    onedrivegui
     noto-fonts-cjk-sans
+    onedriver
     # niri-related packages
     # foot # terminal for niri
     # waybar # status bar for niri
