@@ -14,6 +14,8 @@
             nxr = "sudo nixos-rebuild --impure switch --flake /home/sentinel/nixos-mitsuki#mitsuki";
             drb = "sudo nixos-rebuild --impure dry-build --flake /home/sentinel/nixos-mitsuki#mitsuki";
             nfu = "sudo nix flake update /home/sentinel/nixos-mitsuki";
+            vscode = "code";
+            ll = "ls -la";
         };
     };
     programs.onedrive.enable = true;
