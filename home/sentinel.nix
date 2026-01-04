@@ -28,6 +28,9 @@
         onedrive
         mpv
         signal-desktop
+        kuro
+        vlc
+        evolution
     ];
 
     # Let Home Manager manage itself
