@@ -33,6 +33,7 @@
         vlc
         evolution
         evolution-ews
+        google-chrome
     ];
 
     # Let Home Manager manage itself
