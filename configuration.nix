@@ -152,14 +152,11 @@
         "security" = "user";
         "map to guest" = "never";
       };
-    };
-
-    shares = {
-      Shared = {
-        path = "/home/sentinel/Shared";
-        browseable = true;
-        readOnly = false;
-        validUsers = [ "sentinel" ];
+      "Shared" = {
+        "path" = "/home/sentinel/Shared";
+        "browseable" = "yes";
+        "read only" = "no";
+        "valid users" = [ "sentinel" ];
       };
     };
   };
@@ -211,7 +208,6 @@
     swtpm
     microsoft-edge
     p3x-onenote
-    _1password-gui
     dnsmasq
     vscode
     ghostty
