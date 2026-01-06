@@ -140,6 +140,30 @@
     AllowSuspendThenHibernate=no
   '';
 
+  # Samba file sharing service
+  services.samba = {
+    enable = true;
+
+    # Windows-compatible defaults
+    settings = {
+      global = {
+        "workgroup" = "WORKGROUP";
+        "server string" = "NixOS Samba Server";
+        "security" = "user";
+        "map to guest" = "never";
+      };
+    };
+
+    shares = {
+      vmShared = {
+        path = "/home/sentinel/vm-shared";
+        browseable = true;
+        readOnly = false;
+        validUsers = [ "sentinel" ];
+      };
+    };
+  };
+
   # USER
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sentinel = {
