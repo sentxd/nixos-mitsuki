@@ -185,6 +185,14 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Enable 1Password
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    # recommended: allow your user to authorize privileged actions via polkit
+    polkitPolicyOwners = [ "sentinel" ];
+  };
+
   # Allow some insecure packages
   nixpkgs.config.permittedInsecurePackages = [
     "ventoy-qt5-1.1.07"
