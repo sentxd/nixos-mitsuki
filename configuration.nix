@@ -155,8 +155,8 @@
     };
 
     shares = {
-      vmShared = {
-        path = "/home/sentinel/vm-shared";
+      Shared = {
+        path = "/home/sentinel/Shared";
         browseable = true;
         readOnly = false;
         validUsers = [ "sentinel" ];
