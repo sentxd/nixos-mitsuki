@@ -107,7 +107,16 @@
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.brlaser ];
+  };
+
+  # Enable Avahi for network device discovery.
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+  };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
