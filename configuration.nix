@@ -138,6 +138,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Power management settings to disable hibernate, ignore lid close etc.
   services.logind = {
     settings.Login.HandlePowerKey = "suspend";
     settings.Login.HandleLidSwitch = "ignore";
@@ -146,6 +147,8 @@
     settings.Login.HandleHibernateKey = "ignore";
     settings.Login.HibernateDelaySec = 0;
     settings.Login.AllowHibernation = false;
+    settings.Login.IdleAction = "ignore";
+    settings.Login.IdleActionSec = 0;
   };
 
   systemd.sleep.extraConfig = ''
