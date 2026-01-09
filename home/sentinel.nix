@@ -51,7 +51,7 @@ in
     evolution
     evolution-ews
     google-chrome
-    # vmware-workstation
+    vmware-workstation
     caprine
   ];
 
