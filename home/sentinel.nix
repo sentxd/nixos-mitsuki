@@ -1,87 +1,80 @@
 { config, pkgs, ... }:
 
+# KDE Symlinks
+let
+  kdeDotfilesDir =
+    "${config.home.homeDirectory}/nixos-mitsuki/dotfiles/kde";
+
+  link = file:
+    config.lib.file.mkOutOfStoreSymlink "${kdeDotfilesDir}/${file}";
+
+  kdeFiles = [
+    "kdeglobals"
+    "kcminputrc"
+    "powerdevilrc"
+    "powermanagementprofilesrc"
+    "plasma-localerc"
+  ];
+in
 {
-    home.username = "sentinel";
-    home.homeDirectory = "/home/sentinel";
-    home.stateVersion = "25.11";
-    home.language.base = "en_AU.UTF-8";
-    home.language.time = "en_GB.UTF-8";
+  home.username = "sentinel";
+  home.homeDirectory = "/home/sentinel";
+  home.stateVersion = "25.11";
+  home.language.base = "en_AU.UTF-8";
+  home.language.time = "en_GB.UTF-8";
 
-    programs.bash = {
-        enable = true;
-        shellAliases = {
-            btw = "echo i use plasma btw";
-            nxr = "sudo nixos-rebuild --impure switch --flake /home/sentinel/nixos-mitsuki#mitsuki";
-            drb = "sudo nixos-rebuild --impure dry-build --flake /home/sentinel/nixos-mitsuki#mitsuki";
-            nfu = "sudo nix flake update /home/sentinel/nixos-mitsuki";
-            vscode = "code";
-            ll = "ls -la";
-        };
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      btw = "echo i use plasma btw";
+      nxr = "sudo nixos-rebuild --impure switch --flake /home/sentinel/nixos-mitsuki#mitsuki";
+      drb = "sudo nixos-rebuild --impure dry-build --flake /home/sentinel/nixos-mitsuki#mitsuki";
+      nfu = "sudo nix flake update /home/sentinel/nixos-mitsuki";
+      vscode = "code";
+      ll = "ls -la";
     };
-    programs.onedrive.enable = true;
+  };
 
-    home.packages = with pkgs; [
-        git
-        git-credential-manager
-        neovim
-        wget
-        curl
-        vscode
-        mpv
-        signal-desktop
-        kuro
-        vlc
-        evolution
-        evolution-ews
-        google-chrome
-        # vmware-workstation
-        caprine
-    ];
+  programs.onedrive.enable = true;
 
-    # Let Home Manager manage itself
-    programs.home-manager.enable = true;
+  home.packages = with pkgs; [
+    git
+    git-credential-manager
+    neovim
+    wget
+    curl
+    vscode
+    mpv
+    signal-desktop
+    kuro
+    vlc
+    evolution
+    evolution-ews
+    google-chrome
+    # vmware-workstation
+    caprine
+  ];
 
-    # Manage Git
-    programs.git = {
-        enable = true;
-        settings.user.name  = "sentxd";
-        settings.user.email = "sentxd@gmail.com";
-	settings = {
-          credential.helper = "store";
-	    };
+  programs.home-manager.enable = true;
+
+  programs.git = {
+    enable = true;
+    settings = {
+      user.name = "sentxd";
+      user.email = "sentxd@gmail.com";
+      credential.helper = "store";
     };
+  };
 
-    # KDE Symlinks
-    xdg.configFile."kdeglobals".source =
-    config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/nixos-mitsuki/dotfiles/kde/kdeglobals";
+  # KDE Specific Configs
+  xdg.configFile =
+    builtins.listToAttrs (map (f: {
+      name = f;
+      value.source = link f;
+    }) kdeFiles);
 
-    xdg.configFile."kcminputrc".source =
-    config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/nixos-mitsuki/dotfiles/kde/kcminputrc";
-
-    xdg.configFile."powerdevilrc".source =
-    config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/nixos-mitsuki/dotfiles/kde/powerdevilrc";
-
-    xdg.configFile."powermanagementprofilesrc".source =
-    config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/nixos-mitsuki/dotfiles/kde/powermanagementprofilesrc";
-
-    xdg.configFile."plasma-localerc".source =
-    config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/nixos-mitsuki/dotfiles/kde/plasma-localerc";
-
-    # home.file = {
-    #     ".config/kdeglobals".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/kdeglobals;
-    #     ".config/kcminputrc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/kcminputrc;
-    #     ".config/powerdevilrc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/powerdevilrc;
-    #     ".config/powermanagementprofilesrc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/powermanagementprofilesrc;
-    #     ".config/plasma-localerc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/plasma-localerc;
-    # };
-    home.file.".config/kscreenlockerrc".text = ''
-        [Greeter]
-        Use24HourClock=true
-    '';
-
+  home.file.".config/kscreenlockerrc".text = ''
+    [Greeter]
+    Use24HourClock=true
+  '';
 }
