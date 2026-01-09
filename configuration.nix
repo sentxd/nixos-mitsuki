@@ -241,6 +241,8 @@
     # waybar # status bar for niri
     # mako # notifications for niri
     ventoy-full-qt
+    ripgrep
+    ripgrep-all
   ];
 
   # Virtualisation
