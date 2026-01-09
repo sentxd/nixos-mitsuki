@@ -34,6 +34,8 @@
         evolution
         evolution-ews
         google-chrome
+        vmware-workstation
+        caprine
     ];
 
     # Let Home Manager manage itself
@@ -50,13 +52,33 @@
     };
 
     # KDE Symlinks
-    home.file = {
-        ".config/kdeglobals".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/kdeglobals;
-        ".config/kcminputrc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/kcminputrc;
-        ".config/powerdevilrc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/powerdevilrc;
-        ".config/powermanagementprofilesrc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/powermanagementprofilesrc;
-        ".config/plasma-localerc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/plasma-localerc;
-    };
+    xdg.configFile."kdeglobals".source =
+    config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/nixos-mitsuki/dotfiles/kde/kdeglobals";
+
+    xdg.configFile."kcminputrc".source =
+    config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/nixos-mitsuki/dotfiles/kde/kcminputrc";
+
+    xdg.configFile."powerdevilrc".source =
+    config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/nixos-mitsuki/dotfiles/kde/powerdevilrc";
+
+    xdg.configFile."powermanagementprofilesrc".source =
+    config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/nixos-mitsuki/dotfiles/kde/powermanagementprofilesrc";
+
+    xdg.configFile."plasma-localerc".source =
+    config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/nixos-mitsuki/dotfiles/kde/plasma-localerc";
+
+    # home.file = {
+    #     ".config/kdeglobals".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/kdeglobals;
+    #     ".config/kcminputrc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/kcminputrc;
+    #     ".config/powerdevilrc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/powerdevilrc;
+    #     ".config/powermanagementprofilesrc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/powermanagementprofilesrc;
+    #     ".config/plasma-localerc".source = /home/sentinel/nixos-mitsuki/dotfiles/kde/plasma-localerc;
+    # };
     home.file.".config/kscreenlockerrc".text = ''
         [Greeter]
         Use24HourClock=true
