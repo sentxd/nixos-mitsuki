@@ -50,9 +50,7 @@ in
     vlc
     evolution
     evolution-ews
-    google-chrome
-    vmware-workstation
-    caprine
+    google-chrome    caprine
   ];
 
   programs.home-manager.enable = true;
