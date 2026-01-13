@@ -270,6 +270,7 @@
     ventoy-full-qt
     ripgrep
     ripgrep-all
+    gnome-control-center
   ];
 
   # Virtualisation
