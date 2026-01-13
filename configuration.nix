@@ -193,7 +193,11 @@
   };
 
   # enable gnome-keyring for KDE
-  services.gnome.gnome-keyring.enable = true;
+  services.gnome.gnome-keyring.enable = true;    
+
+  # PAM integration so the keyring actually starts on login
+  security.pam.services.login.enableGnomeKeyring = true;
+  security.pam.services.sddm.enableGnomeKeyring = true;
 
   ## PROGRAMS AND PACKAGES
   # Install Evolution with EWS plugin
@@ -201,6 +205,9 @@
     enable = true;
     plugins = [ pkgs.evolution-ews ];
   };
+
+  # Enable dconf support for KDE applications
+  programs.dconf.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;
