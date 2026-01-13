@@ -193,7 +193,10 @@
   };
 
   # enable gnome-keyring for KDE
-  services.gnome.gnome-keyring.enable = true;    
+  services.gnome.gnome-keyring.enable = true;
+
+  # Enable GNOME Online Accounts integration
+  services.gnome.gnome-online-accounts.enable = true;
 
   # PAM integration so the keyring actually starts on login
   security.pam.services.login.enableGnomeKeyring = true;
