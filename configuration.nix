@@ -71,6 +71,20 @@
   };
 
   # SERVICES
+  # List services that you want to enable:
+
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
+
+  # Open ports in the firewall.
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 5900 445 ]; # SSH and VNC
+    allowedUDPPorts = [ ];
+  };
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
+
   # Firmware Update
   services.fwupd.enable = true; 
 
@@ -181,16 +195,11 @@
   # enable gnome-keyring for KDE
   services.gnome.gnome-keyring.enable = true;
 
-  # USER
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.sentinel = {
-    isNormalUser = true;
-    description = "Sentinel";
-    extraGroups = [ "libvirtd" "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
-    ];
+  ## PROGRAMS AND PACKAGES
+  # Install Evolution with EWS plugin
+  programs.evolution = {
+    enable = true;
+    plugins = [ pkgs.evolution-ews ];
   };
 
   # Install firefox.
@@ -267,19 +276,17 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 5900 445 ]; # SSH and VNC
-    allowedUDPPorts = [ ];
+  ## USER
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.sentinel = {
+    isNormalUser = true;
+    description = "Sentinel";
+    extraGroups = [ "libvirtd" "networkmanager" "wheel" ];
+    packages = with pkgs; [
+      kdePackages.kate
+    #  thunderbird
+    ];
   };
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

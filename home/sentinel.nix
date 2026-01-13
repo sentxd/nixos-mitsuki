@@ -48,8 +48,6 @@ in
     signal-desktop
     kuro
     vlc
-    evolution
-    evolution-ews
     google-chrome    
     caprine
   ];
