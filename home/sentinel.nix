@@ -50,6 +50,8 @@ in
     vlc
     google-chrome    
     caprine
+    gnome-online-accounts
+    gnome-online-accounts-gtk
   ];
 
   programs.home-manager.enable = true;
