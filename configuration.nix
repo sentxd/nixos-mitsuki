@@ -215,8 +215,11 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  # Install thunderbird.
+  programs.thunderbird.enable = true;
+
   # Enable niri
-  programs.niri.enable = false;
+  # programs.niri.enable = false;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
