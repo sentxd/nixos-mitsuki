@@ -178,6 +178,9 @@
     };
   };
 
+  # enable gnome-keyring for KDE
+  services.gnome.gnome-keyring.enable = true;
+
   # USER
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sentinel = {
