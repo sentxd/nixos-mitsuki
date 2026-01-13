@@ -216,7 +216,10 @@
   programs.firefox.enable = true;
 
   # Install thunderbird.
-  programs.thunderbird.enable = true;
+  # programs.thunderbird.enable = true;
+
+  # Install Geary Mail Client
+  programs.geary.enable = true;
 
   # Enable niri
   # programs.niri.enable = false;
