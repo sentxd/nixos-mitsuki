@@ -204,10 +204,10 @@
 
   ## PROGRAMS AND PACKAGES
   # Install Evolution with EWS plugin
-  programs.evolution = {
-    enable = true;
-    plugins = [ pkgs.evolution-ews ];
-  };
+  # programs.evolution = {
+  #   enable = true;
+  #   plugins = [ pkgs.evolution-ews ];
+  # };
 
   # Enable dconf support for KDE applications
   programs.dconf.enable = true;
@@ -217,9 +217,6 @@
 
   # Install thunderbird.
   # programs.thunderbird.enable = true;
-
-  # Install Geary Mail Client
-  programs.geary.enable = true;
 
   # Enable niri
   # programs.niri.enable = false;
