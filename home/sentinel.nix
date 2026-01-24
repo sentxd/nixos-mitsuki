@@ -14,6 +14,7 @@ let
     "powerdevilrc"
     "powermanagementprofilesrc"
     "plasma-localerc"
+    "kglobalshortcutsrc"
   ];
 in
 {

@@ -70,6 +70,20 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
+  # Japanese input method (for typing Japanese characters)
+  # i18n.inputMethod.enabled = with pkgs.lib; [ fcitx5 fcitx5-mozc ];
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc
+      fcitx5-gtk
+      fcitx5-qt
+      fcitx5-configtool
+    ];
+  };
+
+
   # SERVICES
   # List services that you want to enable:
 
