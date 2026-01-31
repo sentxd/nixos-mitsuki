@@ -267,6 +267,9 @@
     virt-manager
     swtpm
     microsoft-edge
+    (writeShellScriptBin "microsoft-edge-stable" ''
+      exec ${pkgs.microsoft-edge}/bin/microsoft-edge "$@"
+    '')
     p3x-onenote
     dnsmasq
     vscode
