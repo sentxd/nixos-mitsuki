@@ -1,12 +1,13 @@
 { config, pkgs, ... }:
 
-# KDE Symlinks
+# Symlinks
 let
-  kdeDotfilesDir =
-    "${config.home.homeDirectory}/nixos-mitsuki/dotfiles/kde";
+  mkLink = baseDir: file:
+    config.lib.file.mkOutOfStoreSymlink "${baseDir}/${file}";
 
-  link = file:
-    config.lib.file.mkOutOfStoreSymlink "${kdeDotfilesDir}/${file}";
+  # KDE Dotfiles
+  kdeDotfilesDir = "${config.home.homeDirectory}/nixos-mitsuki/dotfiles/kde";
+  linkKde = mkLink kdeDotfilesDir;
 
   kdeFiles = [
     "kdeglobals"
@@ -16,8 +17,34 @@ let
     "plasma-localerc"
     "kglobalshortcutsrc"
   ];
+
+  kdeAttrs = builtins.listToAttrs (map (f: {
+    name = f;
+    value.source = linkKde f;
+  }) kdeFiles);
+
+  # fcitx5 configuration
+  fcitx5DotfilesDir = "${config.home.homeDirectory}/nixos-mitsuki/dotfiles";
+  linkFcitx5 = mkLink fcitx5DotfilesDir;
+
+  # These names are RELATIVE TO ~/.config/
+  # so "fcitx5/profile" becomes ~/.config/fcitx5/profile
+  fcitx5Files = [
+    "fcitx5/profile"
+    "fcitx5/config"
+    "fcitx5/conf/mozc.conf"
+  ];
+
+  fcitx5Attrs = builtins.listToAttrs (map (f: {
+    name = f;
+    value.source = linkFcitx5 f;
+  }) fcitx5Files);
+
 in
 {
+  # XDG Configuration 
+  xdg.configFile = kdeAttrs // fcitx5Attrs;
+
   home.username = "sentinel";
   home.homeDirectory = "/home/sentinel";
   home.stateVersion = "25.11";
@@ -67,12 +94,6 @@ in
   };
 
   # KDE Specific Configs
-  xdg.configFile =
-    builtins.listToAttrs (map (f: {
-      name = f;
-      value.source = link f;
-    }) kdeFiles);
-
   home.file.".config/kscreenlockerrc".text = ''
     [Greeter]
     Use24HourClock=true
