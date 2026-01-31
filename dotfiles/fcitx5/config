@@ -11,7 +11,7 @@ EnumerateSkipFirst=False
 ModifierOnlyKeyTimeout=250
 
 [Hotkey/TriggerKeys]
-0=Alt+Shift+Shift_L
+0=Alt+grave
 1=Zenkaku_Hankaku
 2=Hangul
 3=Control+space
