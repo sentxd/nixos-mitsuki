@@ -262,6 +262,9 @@
     wget
     neovim
     inetutils
+    bind    # dig
+    doggo   # modern UX
+    ldns    # drill
     git
     qemu_kvm
     virt-manager
