@@ -205,6 +205,24 @@
     };
   };
 
+  # NFS mounts
+  services.rpcbind.enable = true; # safe to enable; mainly needed for NFSv3, harmless for v4
+
+  fileSystems."/mnt/sara/sentinel" = {
+    device = "192.168.28.30:/volume1/Sentinel";
+    fsType = "nfs";
+    options = [
+      "vers=4"
+      "addr=192.168.28.30"
+
+      "x-systemd.automount"          # mount when accessed
+      "x-systemd.idle-timeout=600"   # unmount after 10 min idle (optional but nice on laptops)
+
+      "nofail"                       # don’t fail boot
+      "_netdev"                      # hint: network device
+    ];
+  };
+
   # enable gnome-keyring for KDE
   services.gnome.gnome-keyring.enable = true;
 
@@ -292,6 +310,7 @@
     ventoy-full-qt
     ripgrep
     ripgrep-all
+    nfs-utils
   ];
 
   # Virtualisation
