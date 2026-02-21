@@ -80,6 +80,7 @@ in
     caprine
     gnome-online-accounts
     gnome-online-accounts-gtk
+    typora
   ];
 
   programs.home-manager.enable = true;
