@@ -217,6 +217,7 @@
 
       "x-systemd.automount"          # mount when accessed
       "x-systemd.idle-timeout=600"   # unmount after 10 min idle (optional but nice on laptops)
+      "x-systemd.mount-timeout=5s"   # fail faster when not connected
 
       "nofail"                       # don’t fail boot
       "_netdev"                      # hint: network device
