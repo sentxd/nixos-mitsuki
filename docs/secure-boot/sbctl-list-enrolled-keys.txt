@@ -1,0 +1,13 @@
+KEK:
+  Key Exchange Key
+  Microsoft Corporation Third Party Marketplace Root
+  Microsoft RSA Devices Root CA 2021
+DB:
+  Database Key
+  Microsoft Corporation Third Party Marketplace Root
+  Microsoft Root Certificate Authority 2010
+  Microsoft RSA Devices Root CA 2021
+  Microsoft RSA Devices Root CA 2021
+  Microsoft Root Certificate Authority 2010
+PK:
+  Platform Key
