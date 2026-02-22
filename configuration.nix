@@ -19,6 +19,9 @@
     pkiBundle = "/var/lib/sbctl";
   };
 
+  # Limit configurations to 10
+  boot.loader.systemd-boot.configurationLimit = 10;
+
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 

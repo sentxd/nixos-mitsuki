@@ -1,3 +1,5 @@
+
+
 # Secure Boot on NixOS (Lanzaboote + UKI + Windows Compatibility)
 
 ## Overview
@@ -98,6 +100,24 @@ lanzaboote.nixosModules.lanzaboote
     bootctl status
     sbctl status
     ```
+
+#### Note
+
+> The initial rebuild failed because it needed the secure boot keys to be created before the bootloader could be changed. However, we were only installing sbctl on the same build. To resolve this, I needed to run a nix shell to run sbctl first before attempting the rebuild again.
+>
+> ```shell
+> sudo nix run nixpkgs#sbctl -- create-keys
+> ```
+>
+> Verify the keys were created.
+>
+> ```shell
+> [sentinel@mitsuki:~]$ sudo ls -l /var/lib/sbctl/keys/db/db.pem
+> Place your finger on the fingerprint reader
+> -r-------- 1 root root 1696 Feb 21 17:08 /var/lib/sbctl/keys/db/db.pem
+> ```
+>
+> Then ran nixos-rebuild again and this time the build completed.
 
 ------
 
