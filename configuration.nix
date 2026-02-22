@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, edgePkgs, ... }:
 
 {
   imports =
@@ -297,9 +297,9 @@
     qemu_kvm
     virt-manager
     swtpm
-    microsoft-edge
+    edgePkgs.microsoft-edge
     (writeShellScriptBin "microsoft-edge-stable" ''
-      exec ${pkgs.microsoft-edge}/bin/microsoft-edge "$@"
+      exec ${edgePkgs.microsoft-edge}/bin/microsoft-edge "$@"
     '')
     p3x-onenote
     dnsmasq

@@ -12,11 +12,23 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-edge = {
+      url = "github:nixos/nixpkgs/bfc1b8a4574108ceef22f02bafcf6611380c100d";
+    };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, lanzaboote, ... }: {
+  outputs = { self, nixpkgs, nixpkgs-edge, nixos-hardware, home-manager, lanzaboote, ... }:
+  let
+    system = "x86_64-linux";
+    edgePkgs = import nixpkgs-edge {
+      inherit system;
+      config.allowUnfree = true;
+    };
+  in {
     nixosConfigurations.mitsuki = nixpkgs.lib.nixosSystem {
       modules = [
+        ({ ... }: { _module.args.edgePkgs = edgePkgs; })
+        
         nixos-hardware.nixosModules.framework-amd-ai-300-series
         lanzaboote.nixosModules.lanzaboote
         home-manager.nixosModules.home-manager
