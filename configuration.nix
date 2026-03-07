@@ -6,7 +6,7 @@
 let
   # Add entries here when something breaks upstream
   pin = {
-    microsoft-edge = pinnedPkgs.microsoft-edge;
+    # microsoft-edge = pinnedPkgs.microsoft-edge;
     # vscode = pinnedPkgs.vscode;
     # somePackage = pinnedPkgs.somePackages;
   };
