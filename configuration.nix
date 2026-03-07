@@ -196,11 +196,11 @@ in
     settings.Login.IdleActionSec = 0;
   };
 
-  systemd.sleep.extraConfig = ''
-    AllowHibernation=no
-    AllowHybridSleep=no
-    AllowSuspendThenHibernate=no
-  '';
+  systemd.sleep.settings.Sleep = {
+    AllowHibernation = false;
+    AllowHybridSleep = false;
+    AllowSuspendThenHibernate = false;
+  };
 
   # Samba file sharing service
   services.samba = {
@@ -318,7 +318,7 @@ in
     tree
     bat
     tealdeer
-    neofetch
+    fastfetch
     displaylink
     usbutils
     noto-fonts-cjk-sans
