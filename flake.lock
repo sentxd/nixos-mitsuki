@@ -127,7 +127,7 @@
         "type": "github"
       }
     },
-    "nixpkgs-edge": {
+    "nixpkgs-pinned": {
       "locked": {
         "lastModified": 1769461804,
         "narHash": "sha256-msG8SU5WsBUfVVa/9RPLaymvi5bI8edTavbIq3vRlhI=",
@@ -172,7 +172,7 @@
         "lanzaboote": "lanzaboote",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-edge": "nixpkgs-edge"
+        "nixpkgs-pinned": "nixpkgs-pinned"
       }
     },
     "rust-overlay": {

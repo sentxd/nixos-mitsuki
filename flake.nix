@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-pinned.url = "github:nixos/nixpkgs/bfc1b8a4574108ceef22f02bafcf6611380c100d";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
@@ -12,22 +13,19 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs-edge = {
-      url = "github:nixos/nixpkgs/bfc1b8a4574108ceef22f02bafcf6611380c100d";
-    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-edge, nixos-hardware, home-manager, lanzaboote, ... }:
+  outputs = { self, nixpkgs, nixpkgs-pinned, nixos-hardware, home-manager, lanzaboote, ... }:
   let
     system = "x86_64-linux";
-    edgePkgs = import nixpkgs-edge {
+    pinnedPkgs = import nixpkgs-pinned {
       inherit system;
       config.allowUnfree = true;
     };
   in {
     nixosConfigurations.mitsuki = nixpkgs.lib.nixosSystem {
       modules = [
-        ({ ... }: { _module.args.edgePkgs = edgePkgs; })
+        ({ ... }: { _module.args.pinnedPkgs = pinnedPkgs; })
         
         nixos-hardware.nixosModules.framework-amd-ai-300-series
         lanzaboote.nixosModules.lanzaboote

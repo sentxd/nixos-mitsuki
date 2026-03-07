@@ -2,8 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, edgePkgs, ... }:
+{ config, pkgs, lib, pinnedPkgs, ... }:
+let
+  # Add entries here when something breaks upstream
+  pin = {
+    microsoft-edge = pinnedPkgs.microsoft-edge;
+    # vscode = pinnedPkgs.vscode;
+    # somePackage = pinnedPkgs.somePackages;
+  };
 
+  # Helper: pick pinned if present, else use main pkgs
+  P = name: (pin.${name} or pkgs.${name}); 
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -297,9 +307,9 @@
     qemu_kvm
     virt-manager
     swtpm
-    edgePkgs.microsoft-edge
+    (P "microsoft-edge")
     (writeShellScriptBin "microsoft-edge-stable" ''
-      exec ${edgePkgs.microsoft-edge}/bin/microsoft-edge "$@"
+      exec ${(P "microsoft-edge")}/bin/microsoft-edge "$@"
     '')
     p3x-onenote
     dnsmasq
