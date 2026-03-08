@@ -349,6 +349,10 @@ in
 
   # Virtualisation
     virtualisation.libvirtd.enable = true;
+    # Use the known-good versions only for virtualization
+    virtualisation.libvirtd.package = pinnedPkgs.libvirt;
+    virtualisation.libvirtd.qemu.package = pinnedPkgs.qemu_kvm;
+
     virtualisation.libvirtd.qemu = {
       swtpm.enable = true;
     };

@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixpkgs-pinned.url = "github:nixos/nixpkgs/bfc1b8a4574108ceef22f02bafcf6611380c100d";
+    nixpkgs-pinned.url = "github:nixos/nixpkgs/0182a361324364ae3f436a63005877674cf45efb";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
