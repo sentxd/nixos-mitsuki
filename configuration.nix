@@ -202,6 +202,20 @@ in
     AllowSuspendThenHibernate = false;
   };
 
+  # disable some wake sources
+  systemd.services.disable-wake-sources = {
+    description = "Disable unwanted wake sources";
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig.Type = "oneshot";
+    script = ''
+      for dev in XHC0 XHC1 XHC3 XHC4 GPP0 GPP1 GPP3 GPP5; do
+        if grep -q "$dev.*enabled" /proc/acpi/wakeup; then
+          echo "$dev" > /proc/acpi/wakeup
+        fi
+      done
+    '';
+  };
+
   # Samba file sharing service
   services.samba = {
     enable = true;
