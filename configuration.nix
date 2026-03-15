@@ -345,6 +345,7 @@ in
     ripgrep
     ripgrep-all
     nfs-utils
+    steam
   ];
 
   # Virtualisation
