@@ -273,6 +273,14 @@ in
   #   plugins = [ pkgs.evolution-ews ];
   # };
 
+  # Enable bash
+  programs.bash.enable = true;
+  programs.bash.interactiveShellInit = ''
+    start() {
+      dolphin "$@" >/dev/null 2>&1 &
+    }
+  '';
+
   # Enable dconf support for KDE applications
   programs.dconf.enable = true;
 
