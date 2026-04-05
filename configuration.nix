@@ -279,6 +279,13 @@ in
     start() {
       dolphin "$@" >/dev/null 2>&1 &
     }
+
+    git-ssh() {
+      if [ -z "$SSH_AUTH_SOCK" ]; then
+        eval "$(ssh-agent -s)"
+      fi
+      ssh-add ~/.ssh/id_ed25519 2>/dev/null
+    }
   '';
 
   # Enable dconf support for KDE applications
