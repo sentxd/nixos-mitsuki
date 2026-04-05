@@ -280,7 +280,7 @@ in
       dolphin "$@" >/dev/null 2>&1 &
     }
 
-    git-ssh() {
+    gitssh() {
       if [ -z "$SSH_AUTH_SOCK" ]; then
         eval "$(ssh-agent -s)"
       fi
