@@ -389,6 +389,7 @@ in
     extraGroups = [ "libvirtd" "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
+      kdePackages.kcalc
     #  thunderbird
     ];
   };
