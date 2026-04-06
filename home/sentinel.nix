@@ -81,6 +81,7 @@ in
     gnome-online-accounts
     gnome-online-accounts-gtk
     typora
+    todoist-electron
   ];
 
   programs.home-manager.enable = true;
