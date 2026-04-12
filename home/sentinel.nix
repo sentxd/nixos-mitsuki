@@ -82,6 +82,7 @@ in
     gnome-online-accounts-gtk
     typora
     todoist-electron
+    vivaldi
   ];
 
   programs.home-manager.enable = true;

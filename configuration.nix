@@ -361,6 +361,8 @@ in
     ripgrep-all
     nfs-utils
     steam
+    android-studio
+    android-tools
   ];
 
   # Virtualisation
@@ -386,7 +388,7 @@ in
   users.users.sentinel = {
     isNormalUser = true;
     description = "Sentinel";
-    extraGroups = [ "libvirtd" "networkmanager" "wheel" ];
+    extraGroups = [ "libvirtd" "networkmanager" "wheel" "kvm"];
     packages = with pkgs; [
       kdePackages.kate
       kdePackages.kcalc
