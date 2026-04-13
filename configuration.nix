@@ -18,6 +18,8 @@ in
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
+      # control power management wake devices.
+      ./modules/power-management.nix
     ];
 
   # Bootloader (Lanzaboote takes over systemd-boot integration)
@@ -203,18 +205,7 @@ in
   };
 
   # disable some wake sources
-  systemd.services.disable-wake-sources = {
-    description = "Disable unwanted wake sources";
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig.Type = "oneshot";
-    script = ''
-      for dev in XHC0 XHC1 XHC3 XHC4 GPP0 GPP1 GPP3 GPP5; do
-        if grep -q "$dev.*enabled" /proc/acpi/wakeup; then
-          echo "$dev" > /proc/acpi/wakeup
-        fi
-      done
-    '';
-  };
+  mitsuki.powerManagement.enable = true;
 
   # Samba file sharing service
   services.samba = {
