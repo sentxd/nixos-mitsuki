@@ -64,8 +64,14 @@ reboot
 Once rebooted, if we are happy with the update, we can merge the new configuration to the master branch. 
 
 ```bash
-git merge
+git switch master
+git merge flake-update-20260606
+git push
 ```
+
+This will switch to the `master` branch and merge all the changes from `flake-update-20260606` and push it to the remote repo on github.
+
+### Rollback
 
 If we want to rollback, it may be possible by switching back to the master branch and `nixos-rebuild switch` again on the old version of the configuration.
 
