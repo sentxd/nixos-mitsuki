@@ -307,6 +307,7 @@ in
     # Ventoy is marked insecure due to bundled binary blobs
     # See: https://github.com/NixOS/nixpkgs/issues/404663
     "ventoy-qt5-1.1.10"
+    "ventoy-qt5-1.1.12"
   ];
 
   # Enable VMware Host support to install VMWare Workstation Pro
