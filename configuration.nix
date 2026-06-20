@@ -257,6 +257,20 @@ in
   security.pam.services.login.enableGnomeKeyring = true;
   security.pam.services.sddm.enableGnomeKeyring = true;
 
+  services.ollama = {
+    enable = true;
+    # For an AMD Framework, try this first if you want GPU acceleration:
+    package = pkgs.ollama-rocm;
+    # If you just want to verify everything works first, you can omit the line above
+    # and let NixOS pick the default package.
+
+    openFirewall = true;
+
+    # Optional: have NixOS pull a model automatically at boot.
+    # Pick a smaller one first.
+    loadModels = [ "llama3.1:8b" ];
+  }
+
   ## PROGRAMS AND PACKAGES
   # Install Evolution with EWS plugin
   # programs.evolution = {
