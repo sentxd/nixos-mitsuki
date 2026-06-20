@@ -355,6 +355,12 @@ in
     steam
     android-studio
     android-tools
+    davinci-resolve      # or davinci-resolve-studio
+    blender
+    obsidian
+    audacity
+    obs-studio
+    libreoffice-fresh
   ];
 
   # Virtualisation
