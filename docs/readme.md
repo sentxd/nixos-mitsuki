@@ -34,7 +34,7 @@ We need to update the flake next using "`nix flake update`". I have an alias to 
 nix flake update --flake /home/sentinel/nixos-mitsuki
 ```
 
-This will pull updated packages into the `flake.nix`.
+This will pull updated packages into the `flake.lock`.
 
 We should then add and commit the changes to the branch
 
