@@ -5,9 +5,9 @@ We are using flakes in NixOS so we periodically will need to "`nix flake update`
 In general the process is as follows:
 
 1. Create a new branch
-2. Run "`nix flake update`"
+2. Run "`nfu`"
 3. Add to branch and commit
-4. Run "`nixos-rebuild switch`"
+4. Run "`nxr`"
 5. Reboot
 6. Merge branch to master
 
