@@ -269,7 +269,7 @@ in
     # Optional: have NixOS pull a model automatically at boot.
     # Pick a smaller one first.
     loadModels = [ "llama3.1:8b" ];
-  }
+  };
 
   ## PROGRAMS AND PACKAGES
   # Install Evolution with EWS plugin
