@@ -263,7 +263,7 @@ in
     package = pkgs.ollama-rocm;
     # If you just want to verify everything works first, you can omit the line above
     # and let NixOS pick the default package.
-
+    host = "0.0.0.0";
     openFirewall = true;
 
     # Optional: have NixOS pull a model automatically at boot.
