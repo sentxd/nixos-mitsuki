@@ -57,9 +57,17 @@ in
   services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
 
   # Needed for USB graphics devices
-  hardware.graphics.enable = true;
-  hardware.amdgpu.opencl.enable = true;
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      mesa.opencl
+    ];
+  };
 
+  environment.variables = {
+    RUSTICL_ENABLE = "radeonsi";
+  };
+=[]
   # Make sure evdi can build against your kernel
   boot.extraModulePackages = with config.boot.kernelPackages; [
     evdi
@@ -377,6 +385,7 @@ in
     obs-studio
     libreoffice-fresh
     pinta
+    clinfo
   ];
 
   # Virtualisation
