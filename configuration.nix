@@ -383,6 +383,7 @@ in
     libreoffice-fresh
     pinta
     clinfo # Tool to check OpenCL configuration
+    ffmpeg
   ];
 
   # Virtualisation
