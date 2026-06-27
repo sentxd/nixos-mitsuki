@@ -67,7 +67,7 @@ in
   environment.variables = {
     RUSTICL_ENABLE = "radeonsi";
   };
-=[]
+
   # Make sure evdi can build against your kernel
   boot.extraModulePackages = with config.boot.kernelPackages; [
     evdi
@@ -336,9 +336,6 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    rocm-opencl-runtime # OpenCL support for AMD GPUs
-    clinfo # Tool to check OpenCL configuration
-    mesa-vulkan-drivers # Vulkan support
     sbctl   # Secure boot
     vim     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
@@ -385,7 +382,7 @@ in
     obs-studio
     libreoffice-fresh
     pinta
-    clinfo
+    clinfo # Tool to check OpenCL configuration
   ];
 
   # Virtualisation
