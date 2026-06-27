@@ -58,7 +58,7 @@ in
 
   # Needed for USB graphics devices
   hardware.graphics.enable = true;
-  hardware.opengl.enable = true;
+  hardware.amdgpu.opencl.enable = true;
 
   # Make sure evdi can build against your kernel
   boot.extraModulePackages = with config.boot.kernelPackages; [
