@@ -58,6 +58,7 @@ in
 
   # Needed for USB graphics devices
   hardware.graphics.enable = true;
+  hardware.opengl.enable = true;
 
   # Make sure evdi can build against your kernel
   boot.extraModulePackages = with config.boot.kernelPackages; [
@@ -327,6 +328,9 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    rocm-opencl-runtime # OpenCL support for AMD GPUs
+    clinfo # Tool to check OpenCL configuration
+    mesa-vulkan-drivers # Vulkan support
     sbctl   # Secure boot
     vim     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
@@ -372,6 +376,7 @@ in
     audacity
     obs-studio
     libreoffice-fresh
+    pinta
   ];
 
   # Virtualisation
