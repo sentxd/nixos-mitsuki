@@ -384,6 +384,7 @@ in
     pinta
     clinfo # Tool to check OpenCL configuration
     ffmpeg
+    codex
   ];
 
   # Virtualisation
