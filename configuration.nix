@@ -385,6 +385,9 @@ in
     clinfo # Tool to check OpenCL configuration
     ffmpeg
     codex
+    opencode
+    opencode-desktop
+    krita
   ];
 
   # Virtualisation
