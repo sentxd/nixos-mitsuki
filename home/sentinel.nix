@@ -51,6 +51,28 @@ in
   home.language.base = "en_AU.UTF-8";
   home.language.time = "en_GB.UTF-8";
 
+  # Keep synced data, repositories, games, and build outputs out of snapshots.
+  home.file.".kopiaignore".text = ''
+    /OneDrive*
+    /manga-one-ops
+    /nixos-mitsuki
+    /obsidian-vaults
+    /odysseus
+    /personal-ops
+    /.steam
+    /.steampath
+    /.steampid
+    /.local/share/Steam
+    /steamgames
+    /.cache
+    /.local/share/Trash
+    node_modules
+    .venv
+    target
+    dist
+    result
+  '';
+
   programs.bash = {
     enable = true;
     shellAliases = {

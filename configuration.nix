@@ -20,6 +20,8 @@ in
       /etc/nixos/hardware-configuration.nix
       # control power management wake devices.
       ./modules/power-management.nix
+      # Encrypted home snapshots to the existing NAS mount.
+      ./modules/kopia-backup.nix
     ];
 
   # Bootloader (Lanzaboote takes over systemd-boot integration)
