@@ -64,6 +64,9 @@ in
     /.steampid
     /.local/share/Steam
     /steamgames
+    /.config/google-chrome*
+    /.config/microsoft-edge*
+    /.config/p3x-onenote
     /.cache
     /.local/share/Trash
     node_modules
