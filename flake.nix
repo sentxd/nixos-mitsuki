@@ -13,9 +13,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hermes-agent = {
+      url = "github:NousResearch/hermes-agent";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-pinned, nixos-hardware, home-manager, lanzaboote, ... }:
+  outputs = { self, nixpkgs, nixpkgs-pinned, nixos-hardware, home-manager, lanzaboote, hermes-agent, ... }:
   let
     system = "x86_64-linux";
     pinnedPkgs = import nixpkgs-pinned {
@@ -27,6 +30,10 @@
       modules = [
         ({ ... }: { _module.args.pinnedPkgs = pinnedPkgs; })
         
+        {
+          _module.args.hermes-agent = hermes-agent;
+        }
+
         nixos-hardware.nixosModules.framework-amd-ai-300-series
         lanzaboote.nixosModules.lanzaboote
         home-manager.nixosModules.home-manager

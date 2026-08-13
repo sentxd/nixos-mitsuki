@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, pinnedPkgs, ... }:
+{ config, pkgs, lib, pinnedPkgs, hermes-agent, ... }:
 let
   # Add entries here when something breaks upstream
   pin = {
@@ -13,6 +13,7 @@ let
 
   # Helper: pick pinned if present, else use main pkgs
   P = name: (pin.${name} or pkgs.${name}); 
+  hermes = hermes-agent.packages.${pkgs.system};
 in
 {
   imports =
@@ -384,12 +385,14 @@ in
     obs-studio
     libreoffice-fresh
     pinta
+    krita
     clinfo # Tool to check OpenCL configuration
     ffmpeg
     codex
     opencode
     opencode-desktop
-    krita
+    hermes.default
+    hermes.desktop
   ];
 
   # Virtualisation
