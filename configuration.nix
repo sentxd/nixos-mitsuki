@@ -376,9 +376,6 @@ in
     ripgrep-all
     nfs-utils
     steam
-    android-studio
-    android-tools
-    davinci-resolve      # or davinci-resolve-studio
     blender
     obsidian
     audacity
