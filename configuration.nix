@@ -391,8 +391,6 @@ in
     codex
     opencode
     opencode-desktop
-    hermes.default
-    hermes.desktop
   ];
 
   # Virtualisation
