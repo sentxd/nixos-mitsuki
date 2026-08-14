@@ -27,6 +27,10 @@ B073D778BF528B4F8468712689D5FA24-clear-item-selections=none,none,Clear selection
 B073D778BF528B4F8468712689D5FA24-save-session=none,none,Save tabs
 _k_friendly_name=Google Chrome
 
+[hermes]
+07CF84AE30A77523F241520CE4A372B3-Ctrl+Shift+Space=Ctrl+Shift+Space,Ctrl+Shift+Space,Hermes shortcut: Ctrl+Shift+Space
+_k_friendly_name=Hermes
+
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
 _k_friendly_name=Accessibility
