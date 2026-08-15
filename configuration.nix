@@ -389,6 +389,7 @@ in
     codex
     opencode
     opencode-desktop
+    hermes.desktop
   ];
 
   # Virtualisation
