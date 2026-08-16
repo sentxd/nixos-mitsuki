@@ -382,6 +382,7 @@ in
     audacity
     obs-studio
     libreoffice-fresh
+    discord
     pinta
     krita
     clinfo # Tool to check OpenCL configuration
