@@ -119,12 +119,19 @@ in
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+    };
+  };
 
   # Open ports in the firewall.
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 5900 445 ]; # SSH and VNC
+    allowedTCPPorts = [ 22 5900 445 ]; # SSH and VNC
     allowedUDPPorts = [ ];
   };
   # Or disable the firewall altogether.
