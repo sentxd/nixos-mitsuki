@@ -431,7 +431,7 @@ in
     description = "Sentinel";
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPbWX+YoGhWvG0K/nSSeWPqDFSMJnb3FzetVlBsQ8hnp hermes@sentinel-vm"
-    ]
+    ];
     extraGroups = [ "libvirtd" "networkmanager" "wheel" "kvm" "docker" ];
     packages = with pkgs; [
       kdePackages.kate
