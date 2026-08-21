@@ -382,6 +382,7 @@ in
     caligula
     ripgrep
     ripgrep-all
+    jq
     nfs-utils
     steam
     blender
